@@ -1,0 +1,25 @@
+
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="m-2 p-3">
+    <form action="/payment" method="POST">
+        {% csrf_token %}
+    
+        <div class="form-group">
+          <label for="">Payment Method</label>
+          <select name="pay" class="form-select">
+            <option value="Cash on Delivary">Cash on Delivary</option>
+            <option value="Paypal">Paypal</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="RazorPay">RazorPay</option>
+          </select>
+          
+        </div>
+        
+        <input type="submit" class="btn float-left btn-outline-success col-lg-6" value="Place Order">
+    </form>
+  </div>
+  {% endblock %}
